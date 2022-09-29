@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>김현재번역기</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            #translater {
+                border: solid 1px;
+                padding: 10px;
+                top: 50%;
+            }
+            #translater>div {
+                display: block;
+                justify-content: space-evenly;
+                align-self: center;
+            }
+            p {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="translater">   
+            <div id="chooser">
+                <select name="otherlang" id="choose">
+                    <option value="none">도착언어</option>
+                    <option value="English">영어</option>
+                    <option value="Korean">한국어</option>
+                </select>
+            </div>
+            <br>
+            
+            <div id="secondchild">
+                <input type="text" id="DepartWord">
+                <button onclick="tran();">translate</button>
+                <p id="trans">번역된 언어</p>
+            </div>
+        </div>
+        <script>
+            
+            var ArriveLang = document.getElementById('choose');
+            var DepartWord = document.getElementById('DepartWord');
+            var trans = document.getElementById('trans');
+            function tran() {
+               var translated = document.getElementById('DepartWord').value;
+               console.log(translated);
+               trans.innerText = translated;
+            }
+        </script>
+    </body>
+</html>
